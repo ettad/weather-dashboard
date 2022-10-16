@@ -1,0 +1,98 @@
+body {
+    background-color: rgb(105, 85, 85);
+    color: white;
+    
+}
+
+.navbar {
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgba(92, 91, 91, 0.311);
+}
+
+    input {
+        background-color: white;
+        border-radius: 20px;
+    }
+
+.weather {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    margin: 30px;
+    text-align: center;
+    /* width: 250px;
+    height: 250px; */
+}
+
+    .city {
+        font-size: 1.4em;
+    }
+
+    .current-weather {
+        display: flex;
+        /* border: 1px solid black; */
+        justify-content: space-around;
+        text-align: center;
+        align-items: center;        
+    }
+        .current-weather li {
+            /* border: 1px solid black; */
+            list-style-type: none;
+
+        }
+        .icon{
+            font-size: 1.2em;
+            
+
+        }
+
+        .temp {
+            font-size: 3em;
+        }
+
+    .forcast-info{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+        .condition {
+            padding: 2px;
+            /* border: 1px solid white; */
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .detail-info {
+            display:flex;
+            justify-content: space-between;
+        }
+            .detail-info li {
+                /* border: 1px solid white; */
+                list-style-type: none;
+                padding: 0 5px;
+                font-size: .8em;
+            }
+    .daily-weather {
+        color: black;
+        display:flex;
+        justify-content: space-around;
+        margin-top:15vh;
+        padding:0 2vw;
+    }
+    .days {
+        background-color:rgb(85, 65, 65);
+        border: none;
+        color:aliceblue
+    }
+
+    .days:hover {
+        border: 1px solid rgb(255, 189, 57);
+        border-radius: 20px;
+    }
+
+
+
+
