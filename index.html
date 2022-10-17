@@ -6,13 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-        <title>Weather Dashboard</title>
+        <title>Crazy Weather</title>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="./assets/css/style.css">
     </head>
 
     <body>
-
+ 
         <nav class="navbar">
             <div class="search">
                 <input type="text" class="search-bar" placeholder="Search">
@@ -20,6 +20,7 @@
               </div>
         </nav>
 
+        <!-- current day forcast section -->
         <section class="weather">
             <h2 class="city">Lone Tree, United States</h2>
             <p class="day">Today</p>
@@ -41,15 +42,10 @@
 
         </section>
 
-
-
-
-
-
-
-
-
+        <!-- five day forcast section -->
         <section class="row daily-weather">
+
+            <!-- tempreture and conditions -->
             <div class="card days" style="width:14rem;">
                 <div class=" col-12 card-body day1">
                   <p class="card-title" id="card-title1">Fri 15<p>
@@ -58,7 +54,7 @@
                         <li class="temp">52°</li>
                         <li>F</li>
                     </div>
-
+                    <!-- info about wind,humidity & UV -->
                     <div class="forcast-info">
                         <h5 class="condition">Clear</h5>
                         <div class="detail-info">
