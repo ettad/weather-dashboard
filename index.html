@@ -15,27 +15,39 @@
  
         <nav class="navbar">
             <div class="search">
-                <input type="text" class="search-bar" placeholder="Search">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-              </div>
+                <input type="text" class="search-bar" placeholder="City Name">
+                <button id="glass"><i class="fa-solid fa-magnifying-glass search"></i></button>
+              
+            </div>
+            <!-- creates dropdown menu -->
+
         </nav>
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Location History</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="https://www.youtube.com/">Dallas</a>
+              <a href="#about">About</a>
+              <button id=""></button>
+            </div>
+        </div>
 
         <!-- current day forcast section -->
         <section class="weather">
-            <h2 class="city">Lone Tree, United States</h2>
-            <p class="day">Today</p>
+            <h2 class="city"></h2>
+            <p class="day"></p>
             <div class="current-weather">
-                <li><i class="fa-solid fa-cloud icon"></i></li>
-                <li class="temp">52°</li>
+                <li><img src="" alt="weather icon" class="icon"></li>
+                <li class="temp"></li>
                 <li>F</li>
             </div>
 
             <div class="forcast-info">
-                <h5 class="condition">Clear</h5>
+                <h5 class="condition"></h5>
                 <div class="detail-info">
-                    <li class="wind">Wind 8mph</li>
-                    <li class="humidity">Humidity 25%</li>
-                    <li class="uv">UV 0.65</li>
+                    <li class="wind"></li>
+                    <li class="humidity"></li>
+                    <li id="uv" class="veryHigh">UV 0.65</li>
                 </div>
             </div>
 
@@ -48,19 +60,18 @@
             <!-- tempreture and conditions -->
             <div class="card days" style="width:14rem;">
                 <div class=" col-12 card-body day1">
-                  <p class="card-title" id="card-title1">Fri 15<p>
+                  <p class="card-title" id="card-title1"><p>
                     <div class="current-weather">
-                        <li><i class="fa-solid fa-cloud icon"></i></li>
-                        <li class="temp">52°</li>
+                        <li><img src="" alt="weather icon" class="icon1"></li>
+                        <li class="temp1"></li>
                         <li>F</li>
                     </div>
                     <!-- info about wind,humidity & UV -->
                     <div class="forcast-info">
-                        <h5 class="condition">Clear</h5>
+                        <h5 class="condition1"></h5>
                         <div class="detail-info">
-                            <li class="wind">Wind 8mph</li>
-                            <li class="humidity">Humidity 25%</li>
-                            <li class="uv">UV 0.65</li>
+                            <li class="wind1"></li>
+                            <li class="humidity1"></li>
                         </div>
                     </div>
                 </div>
@@ -68,19 +79,19 @@
 
             <div class="card days" style="width:14rem;">
                 <div class="card-body day1">
-                  <p class="card-title" id="card-title2">Fri 15<p>
+                  <p class="card-title" id="card-title2"><p>
                     <div class="current-weather">
-                        <li><i class="fa-solid fa-cloud icon"></i></li>
-                        <li class="temp">52°</li>
+                        <li><img src="" alt="weather icon" class="icon2"></li>
+                        <li class="temp2"></li>
                         <li>F</li>
                     </div>
 
                     <div class="forcast-info">
-                        <h5 class="condition">Clear</h5>
+                        <h5 class="condition2"></h5>
                         <div class="detail-info">
-                            <li class="wind">Wind 8mph</li>
-                            <li class="humidity">Humidity 25%</li>
-                            <li class="uv">UV 0.65</li>
+                            <li class="wind2"></li>
+                            <li class="humidity2"></li>
+
                         </div>
                     </div>
                 </div>
@@ -88,19 +99,18 @@
 
             <div class="card days" style="width:14rem;">
                 <div class="card-body day1">
-                  <p class="card-title"id="card-title3">Fri 15<p>
+                  <p class="card-title"id="card-title3"><p>
                     <div class="current-weather">
-                        <li><i class="fa-solid fa-cloud icon"></i></li>
-                        <li class="temp">52°</li>
+                        <li><img src="" alt="weather icon" class="icon3"></li>
+                        <li class="temp3"></li>
                         <li>F</li>
                     </div>
 
                     <div class="forcast-info">
-                        <h5 class="condition">Clear</h5>
+                        <h5 class="condition3"></h5>
                         <div class="detail-info">
-                            <li class="wind">Wind 8mph</li>
-                            <li class="humidity">Humidity 25%</li>
-                            <li class="uv">UV 0.65</li>
+                            <li class="wind3"></li>
+                            <li class="humidity3"></li>
                         </div>
                     </div>
                 </div>
@@ -108,19 +118,18 @@
 
             <div class="card days" style="width:14rem;">
                 <div class="card-body day1">
-                  <p class="card-title"id="card-title4">Fri 15<p>
+                  <p class="card-title"id="card-title4"><p>
                     <div class="current-weather">
-                        <li><i class="fa-solid fa-cloud icon"></i></li>
-                        <li class="temp">52°</li>
+                        <li><img src="" alt="weather icon" class="icon4"></li>
+                        <li class="temp4"></li>
                         <li>F</li>
                     </div>
 
                     <div class="forcast-info">
-                        <h5 class="condition">Clear</h5>
+                        <h5 class="condition4"></h5>
                         <div class="detail-info">
-                            <li class="wind">Wind 8mph</li>
-                            <li class="humidity">Humidity 25%</li>
-                            <li class="uv">UV 0.65</li>
+                            <li class="wind4"></li>
+                            <li class="humidity4"></li>
                         </div>
                     </div>
                 </div>
@@ -128,19 +137,18 @@
 
             <div class="card days" style="width:14rem;">
                 <div class="card-body day1">
-                  <p class="card-title"id="card-title5">Fri 15<p>
+                  <p class="card-title"id="card-title5"><p>
                     <div class="current-weather">
-                        <li><i class="fa-solid fa-cloud icon"></i></li>
-                        <li class="temp">52°</li>
+                        <li><img src="" alt="weather icon" class="icon5"></li>
+                        <li class="temp5"></li>
                         <li>F</li>
                     </div>
 
                     <div class="forcast-info">
-                        <h5 class="condition">Clear</h5>
+                        <h5 class="condition5"></h5>
                         <div class="detail-info">
-                            <li class="wind">Wind 8mph</li>
-                            <li class="humidity">Humidity 25%</li>
-                            <li class="uv">UV 0.65</li>
+                            <li class="wind5"></li>
+                            <li class="humidity5"></li>
                         </div>
                     </div>
                 </div>
