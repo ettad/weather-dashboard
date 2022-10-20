@@ -1,5 +1,9 @@
 body {
-    background-color: rgb(105, 85, 85);
+    /* background-color: rgb(28, 2, 2); */
+    background-image: url("../images/clear-sky.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: white;
     box-sizing: border-box;
     
@@ -13,65 +17,69 @@ body {
     background-color: rgba(92, 91, 91, 0.311);
 }
 
-    input {
-        background-color: rgb(255, 255, 255);
-        border-radius: 20px;
-        border: 3px solid white
-    }
+input {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: 3px solid white
+}
 
-    #glass {
-        border-radius: 30px;
-        border: 2px solid white;
-    }
+#glass {
+    border-radius: 30px;
+    border: 2px solid white;
+}
 
-      #glass:focus {
-        background: rgb(255, 189, 57);
-        color: white;
-        border: 2px solid rgb(255, 189, 57);
-      }
+#glass:focus {
+    background: rgb(255, 189, 57);
+    color: white;
+    border: 2px solid rgb(255, 189, 57);
+}
 
-    .dropbtn {
-        background-color: rgb(85, 65, 65);
-        color: white;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-      }
-      
-      .dropbtn:hover {
-        background-color: rgb(135, 109, 109);
-      }
+.dropbtn {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.dropbtn:hover {
+    background-color: rgba(255, 255, 255, 0.176);
+}
 
 
-      
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 147px;
-        overflow: auto;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-      }
-      
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-      }
-      
-      .dropdown a:hover {background-color: #ddd;}
 
-      .show {
-        display: block;
-      }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.04);
+    min-width: 150px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 5px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.8em;
+}
+
+.dropdown a:hover {
+    background-color: rgba(255, 255, 255, 0.176);
+}
+
+.show {
+    display: block;
+}
 
 .weather {
     display: flex;
@@ -79,94 +87,90 @@ body {
     flex-direction: column;
     align-content: center;
     text-align: center;
-    /* width: 250px;
-    height: 250px; */
 }
 
-    .city {
-        font-size: 1.4em;
-    }
+.city {
+    font-size: 1.4em;
+}
 
-    .current-weather {
-        display: flex;
-        /* border: 1px solid black; */
-        justify-content: space-around;
-        text-align: center;
-        align-items: center;        
-    }
-        .current-weather li {
-            /* border: 1px solid black; */
-            list-style-type: none;
+.current-weather {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;        
+}
+.current-weather li {
 
-        }
-        .icon, .icon1, .icon2, .icon3, .icon4, .icon5{
-            font-size: 1.2em;
-            
+    list-style-type: none;
 
-        }
+}
+.icon, .icon1, .icon2, .icon3, .icon4, .icon5{
+    font-size: 1.2em;
+}
 
-        .temp, .temp1, .temp2, .temp3, .temp4, .temp5 {
-            font-size: 3em;
-        }
+.temp, .temp1, .temp2, .temp3, .temp4, .temp5 {
+    font-size: 3em;
+}
 
-    .forcast-info{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-        .condition, .condition1,.condition2,.condition3,.condition4,.condition5 {
-            padding: 2px;
-            /* border: 1px solid white; */
-            text-align: center;
-            font-size: 1.2em;
-        }
-        .detail-info {
-            display:flex;
-            justify-content: space-between;
-        }
-            .detail-info li {
-                /* border: 1px solid white; */
-                list-style-type: none;
-                padding: 0 5px;
-                font-size: .7em;
-            }
-    .daily-weather {
-        color: black;
-        display:flex;
-        justify-content: space-evenly;
-        margin: 0 auto;
-        padding:5vw 2vw;
-        max-width: 1400px;
-    }
-    .days {
-        background-color:rgba(255, 255, 255, 0.176);
-        border: none;
-        color:aliceblue
-    }
+.forcast-info{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.condition, .condition1,.condition2,.condition3,.condition4,.condition5 {
+    padding: 2px;
+    /* border: 1px solid white; */
+    text-align: center;
+    font-size: 1.2em;
+}
+.detail-info {
+    display:flex;
+    justify-content: space-between;
+}
+.detail-info li {
+    /* border: 1px solid white; */
+    list-style-type: none;
+    padding: 0 5px;
+    font-size: .7em;
+}
+.daily-weather {
+    /* color: black; */
+    display:flex;
+    justify-content:center;
+    margin: 0 auto;
+    padding:5vw 2vw;
+    max-width: auto;
+}
+.days {
+    background-color:rgba(255, 255, 255, 0.176);
+    border: none;
+    color:aliceblue;
+    margin: 5px 5px;
+}
 
-    .days:hover {
-        border: 1px solid rgb(255, 189, 57);
-        border-radius: 20px;
-    }
+.days:hover {
+    border: 2px solid rgb(57, 209, 255);
+}
 
-    /* uv index color code */
-    .low {
-        background-color: rgba(0, 128, 0, 0.300);
-        border-radius: 5px;
-    }
+/* uv index color code*/
+.low {
+    background-color: rgba(0, 128, 0, 0.600);
+    border-radius: 5px;
+}
 
-    .moderate {
-        background-color: rgba(255, 255, 0, 0.500);
-        border-radius: 5px;
-    }
+.moderate {
+    background-color: rgba(255, 238, 0, 0.838);
+    border-radius: 5px;
+    color: black
+}
 
-    .high {
-        background-color: rgba(255, 166, 0, 0.500);
-        border-radius: 5px;
-    }
+.high {
+    background-color: rgba(255, 166, 0, 0.800);
+    border-radius: 5px;
+}
 
-    .veryHigh { 
-        background-color: rgba(255, 0, 0, 0.300);
-        border-radius: 5px;
-    }
+.veryHigh { 
+    background-color: rgba(255, 0, 0, 0.600);
+    border-radius: 5px;
+}
 

@@ -1,4 +1,7 @@
 var apiKey = "ffa287a41d8fa9185d665601ec3150eb" //"353e2aa09f7816521fb39f183aec1ab9";
+var locations = [];
+
+var locationsEl = document.getElementsByClassName(".dropdown-content");
 
 var todaysDate = moment().format('ddd DD YYYY');
 $(".day").html(todaysDate);
@@ -18,11 +21,14 @@ function date (data) {
         
             let wind = data.daily[i].wind_speed;
             $(".wind" +i).html("Wind " + Math.round(wind) + " mph")
+
             let weatherIcon = data.daily[i].weather[0].icon;
             document.querySelector(".icon" + i).src =
             "https://openweathermap.org/img/wn/" + weatherIcon + ".png";
+
             let description = data.daily[i].weather[0].main;
             $(".condition" + i).html(description);
+
             let humidity = data.daily[i].humidity;
             $(".humidity" + i).html("Humidity " + humidity + "%");
 
@@ -80,7 +86,7 @@ document.querySelector(".search button").addEventListener("click", function () {
 
 
 let weather = {
-    apiKey: "ffa287a41d8fa9185d665601ec3150eb",
+
     fetchWeather: function (lon,lat, city, state, country) {
 
         // console.log("L: " + lon + " La: "+ lat + "c: " + city +" "+ state+ " "+country);
@@ -102,7 +108,7 @@ let weather = {
         let weatherIcon = data.current.weather[0].icon;
         let description = data.current.weather[0].main;
         let humidity = data.current.humidity;
-        // document.querySelector("#uv").innerHTML = "UV " + uvIndex;
+        document.querySelector("#uv").innerHTML = "UV " + uvIndex;
         $("#uv").html("UV " + uvIndex);
         document.querySelector(".city").innerHTML =(city +", "+state);
         document.querySelector(".icon").src =
@@ -118,6 +124,11 @@ let weather = {
     },
     search: function () {
         this.fetchWeather(document.querySelector(".search-bar").value);
+
+        let locationSearch = document.querySelector(".search-bar").value
+        locations.push(locationSearch);
+        localStorage.setItem("locations", JSON.stringify(locations));
+
     },
     };
     
@@ -146,6 +157,13 @@ function myFunction() {
     }
   }
 
+  function locationList() {
+
+
+  }
+
+ 
+
 
 // for uv index color coding --------------------------
   var uvi = function (uvI){
@@ -163,5 +181,5 @@ function myFunction() {
         document.querySelector("#uv").className = "veryHigh";
   }
 // default city when page loads
-geoCoding.fetchGeoCode("dallas");
+geoCoding.fetchGeoCode("la");
 
