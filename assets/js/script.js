@@ -42,7 +42,7 @@ function date (data) {
 let geoCoding = {
     fetchGeoCode: function (cityName) {
 
-        fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + cityName +'&appid='+apiKey)
+        fetch('https://api.openweathermap.org/geo/1.0/direct?q=' + cityName +'&appid='+apiKey)
             .then(function (response) {
                 return response.json();
             })
