@@ -1,14 +1,12 @@
 var apiKey = "ffa287a41d8fa9185d665601ec3150eb" //"353e2aa09f7816521fb39f183aec1ab9";
-var locations = [];
-
-var locationsEl = document.getElementsByClassName(".dropdown-content");
+var locationHistory = JSON.parse(localStorage.getItem("location")) || [];
 
 var todaysDate = moment().format('ddd DD YYYY');
 $(".day").html(todaysDate);
 
- // sets the five days date for the daily forcast
+ // sets the five days date for the daily forecast
 function date (data) {
-    console.log(data); 
+
 
     $(".days").each(function () {
         // console.log(data);
@@ -50,8 +48,6 @@ let geoCoding = {
         
             // adds content to carousel
             .then(function (data) { 
-
-                console.log(data)
         
                 var cityName = data[0].name;
                 // console.log("City name: " + cityName);
@@ -63,7 +59,7 @@ let geoCoding = {
                 // console.log("lon: " + lon);
         
                 var country = data[0].country;
-                // console.log("country: " + country);
+                 console.log("country: " + country);
         
                 var state = data[0].state;
                 // console.log("State: " + state);
@@ -98,10 +94,9 @@ let weather = {
 
             return response.json();
         })
-        .then((data) => this.displayWeather(data,city, state));
+        .then((data) => this.displayWeather(data,city, state,country));
     },
-    displayWeather: function (data,city, state) {
-        console.log(data);
+    displayWeather: function (data,city, state, country) {
         var uvIndex = data.current.uvi;
         let temp = data.current.temp;
         let wind = data.current.wind_speed;
@@ -110,7 +105,7 @@ let weather = {
         let humidity = data.current.humidity;
         document.querySelector("#uv").innerHTML = "UV " + uvIndex;
         $("#uv").html("UV " + uvIndex);
-        document.querySelector(".city").innerHTML =(city +", "+state);
+        document.querySelector(".city").innerHTML =(city +", "+state + ", " + country);
         document.querySelector(".icon").src =
         "https://openweathermap.org/img/wn/" + weatherIcon + ".png";
         document.querySelector(".condition").innerText = description;
@@ -126,44 +121,16 @@ let weather = {
         this.fetchWeather(document.querySelector(".search-bar").value);
 
         let locationSearch = document.querySelector(".search-bar").value
-        locations.push(locationSearch);
-        localStorage.setItem("locations", JSON.stringify(locations));
+        locationHistory.push(locationSearch);
+        localStorage.setItem("locations", JSON.stringify(locationHistory));
 
     },
-    };
+
+};
     
-    document.querySelector(".search button").addEventListener("click", function () {
+document.querySelector(".search button").addEventListener("click", function () {
     weather.search();
-    });
-
-
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-  
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  }
-
-  function locationList() {
-
-
-  }
-
- 
-
+});
 
 // for uv index color coding --------------------------
   var uvi = function (uvI){
@@ -180,6 +147,7 @@ function myFunction() {
         //very high - red
         document.querySelector("#uv").className = "veryHigh";
   }
+
 // default city when page loads
 geoCoding.fetchGeoCode("la");
 
