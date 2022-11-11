@@ -1,5 +1,7 @@
 var apiKey = "ffa287a41d8fa9185d665601ec3150eb" //"353e2aa09f7816521fb39f183aec1ab9";
-var locationHistory = JSON.parse(localStorage.getItem("location")) || [];
+const historyEl = document.getElementById("history");
+const clearEl = document.getElementById("clear");
+let locationHistory = JSON.parse(localStorage.getItem("locations")) || [];
 
 var todaysDate = moment().format('ddd DD YYYY');
 $(".day").html(todaysDate);
@@ -35,9 +37,8 @@ function date (data) {
 
     })
 }
-//calls the date function
-// date();
 
+//create geoCoding object and passes data to other functions
 let geoCoding = {
     fetchGeoCode: function (cityName) {
 
@@ -50,30 +51,21 @@ let geoCoding = {
             .then(function (data) { 
         
                 var cityName = data[0].name;
-                // console.log("City name: " + cityName);
-        
                 var lat = data[0].lat;
-                // console.log("lat: "+ lat);
-        
                 var lon = data[0].lon;
-                // console.log("lon: " + lon);
-        
                 var country = data[0].country;
-                 console.log("country: " + country);
-        
                 var state = data[0].state;
-                // console.log("State: " + state);
                
                 weather.fetchWeather(lon,lat,cityName, state, country);
-                // date(data);
             });
     },
-
+    // get value from search
     search: function () {
         this.fetchGeoCode(document.querySelector(".search-bar").value);
     },
 };
 
+// call search to run the function
 document.querySelector(".search button").addEventListener("click", function () {
     geoCoding.search();
   });
@@ -85,7 +77,6 @@ let weather = {
 
     fetchWeather: function (lon,lat, city, state, country) {
 
-        // console.log("L: " + lon + " La: "+ lat + "c: " + city +" "+ state+ " "+country);
 
         fetch(
             'https://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lon+'&units=imperial&exclude=minutely,hourly,alerts&appid='+apiKey
@@ -121,9 +112,10 @@ let weather = {
         this.fetchWeather(document.querySelector(".search-bar").value);
 
         let locationSearch = document.querySelector(".search-bar").value
-        locationHistory.push(locationSearch);
+        locationHistory.push(locationSearch.toUpperCase());
         localStorage.setItem("locations", JSON.stringify(locationHistory));
-
+        
+        renderSearchHistory();
     },
 
 };
@@ -148,6 +140,46 @@ document.querySelector(".search button").addEventListener("click", function () {
         document.querySelector("#uv").className = "veryHigh";
   }
 
+
+//create history on page load
+function renderSearchHistory() {
+
+    historyEl.innerHTML = "";
+
+    for (let i = 0; i < locationHistory.length; i++) {
+
+        const historyItem = document.createElement("input");
+
+        historyItem.setAttribute("type", "text");
+        historyItem.setAttribute("readonly", true);
+        historyItem.setAttribute("class", "form-control");
+        historyItem.setAttribute("value", locationHistory[i]);
+
+        historyItem.addEventListener("click", function () {
+            geoCoding.fetchGeoCode(historyItem.value)
+        })
+
+        historyEl.append(historyItem);
+
+    }
+
+}
+
+ //clear location history
+ clearEl.addEventListener("click", function () {
+
+    localStorage.clear();
+    locationHistory = [];
+
+    renderSearchHistory();
+})
+
+renderSearchHistory();
+
+
+
+
 // default city when page loads
-geoCoding.fetchGeoCode("la");
+geoCoding.fetchGeoCode("lonetree");
+
 

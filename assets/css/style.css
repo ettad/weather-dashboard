@@ -10,10 +10,9 @@ body {
 }
 
 .navbar {
-    /* background-color: black; */
+   
     display: flex;
-    justify-content: center;
-    padding: 10px;
+    justify-content:center;
     background-color: rgba(92, 91, 91, 0.311);
 }
 
@@ -28,56 +27,23 @@ input {
     border: 2px solid white;
 }
 
-#glass:focus {
+#glass:hover {
     background: rgb(255, 189, 57);
-    color: white;
+    color: rgb(0, 0, 0);
     border: 2px solid rgb(255, 189, 57);
 }
 
-/* Dropdown Button */
-.dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Dropdown button on hover & focus */
-  .dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content form {
+#clear {
+    background-color: rgba(255, 255, 255, 0.134);
+    color:white;
+    border-radius: 20px;
+    border-color: rgba(0, 0, 0, 0);
+}
+
+#clear:hover {
+    background-color: rgb(255, 189, 57);
     color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd;}
-  
-  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-  .show {display:block;}
+}
 
 .weather {
     display: flex;
@@ -85,6 +51,7 @@ input {
     flex-direction: column;
     align-content: center;
     text-align: center;
+    margin: 10px;
 }
 
 .city {
@@ -146,9 +113,6 @@ input {
     margin: 5px 5px;
 }
 
-.days:hover {
-    border: 2px solid rgb(57, 209, 255);
-}
 
 /* uv index color code*/
 .low {
@@ -170,5 +134,32 @@ input {
 .veryHigh { 
     background-color: rgba(255, 0, 0, 0.600);
     border-radius: 5px;
+}
+
+#history {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+   
+}
+
+.form-control{
+    width: 250px;
+    background-color: rgba(255, 228, 196, 0.266);
+    margin: 5px;
+    color: white;
+    text-align: center;
+    border: none;
+}
+
+.form-control:hover {
+    background-color: rgb(255, 189, 57);
+    color: black;
+}
+
+.form-control:focus {
+    background-color: rgb(255, 189, 57);
+    color: black;
 }
 
