@@ -1,4 +1,4 @@
-var apiKey = "ffa287a41d8fa9185d665601ec3150eb" //"353e2aa09f7816521fb39f183aec1ab9";
+var apiKey = "ffa287a41d8fa9185d665601ec3150eb"
 const historyEl = document.getElementById("history");
 const clearEl = document.getElementById("clear");
 let locationHistory = JSON.parse(localStorage.getItem("locations")) || [];
@@ -65,7 +65,7 @@ let geoCoding = {
     },
 };
 
-// call search to run the function
+// call search to run the funciton
 document.querySelector(".search button").addEventListener("click", function () {
     geoCoding.search();
   });
